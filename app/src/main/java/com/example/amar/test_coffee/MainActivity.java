@@ -40,8 +40,10 @@ public class MainActivity extends ActionBarActivity {
     }
     public void display_price(int q)
     {
+        String name="\nname:amar"+"\nquantity of coffee ordered:"+quant+"\nThank you have a nice day";
         TextView text1=(TextView)findViewById(R.id.price);
-        text1.setText(NumberFormat.getCurrencyInstance().format(q));
+
+        text1.setText(NumberFormat.getCurrencyInstance().format(q)+name);
 
     }
     @Override
