@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -40,7 +41,11 @@ public class MainActivity extends ActionBarActivity {
     }
     public void display_price(int q)
     {
-        String name="\nname:amar"+"\nquantity of coffee ordered:"+quant+"\nThank you have a nice day";
+        String name="\nname:amar";
+        CheckBox ck=(CheckBox)findViewById(R.id.chk);
+        if(ck.isChecked())
+        {name+="\nWipped cream added";q+=5;}
+        name+="\nquantity of coffee ordered:"+quant+"\nThank you have a nice day";
         TextView text1=(TextView)findViewById(R.id.price);
 
         text1.setText(NumberFormat.getCurrencyInstance().format(q)+name);
