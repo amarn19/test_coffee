@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">test_coffee</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-
+    <string name="toppings">Toppings</string>
+    <string name="whippedcream">Whipped Cream</string>
+    <string name="chocolate">Chocalate</string>
+    <string name="icecream">Icecream</string>
+    <string name="quantity">Quantity</string>
+    <string name="price">Price</string>
+    <string name="order">order</string>
 </resources>
