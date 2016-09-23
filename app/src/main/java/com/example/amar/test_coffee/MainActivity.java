@@ -6,7 +6,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.NumberFormat;
 
@@ -20,35 +22,50 @@ public class MainActivity extends ActionBarActivity {
     }
     public void increment(View view)
     {
+        if(quant==20)
+        {Toast.makeText(this, "coffees order cannot be more than 20", Toast.LENGTH_SHORT).show();return;}
         quant++;
         display(quant);
     }
     public void decrement(View view) {
-        if (quant > 0) {
+        if (quant == 0) {
+            Toast.makeText(this, "coffees order cannot be more than 20", Toast.LENGTH_SHORT).show();
+            return;}
             quant--;
             display(quant);
         }
-    }
+
     public void orders(View view)
     {
         display(quant);
-        display_price(quant*5);
+        display_price();
     }
     public void display(int q)
     {
         TextView text=(TextView)findViewById(R.id.quant);
         text.setText(""+q);
     }
-    public void display_price(int q)
+    public void display_price()
     {
-        String name="\nname:amar";
+        int t=0;
+        EditText ed=(EditText)findViewById(R.id.name);
+        String name="\nName:"+ed.getText().toString();
         CheckBox ck=(CheckBox)findViewById(R.id.chk);
+        CheckBox cho=(CheckBox)findViewById(R.id.cho);
+        CheckBox ice=(CheckBox)findViewById(R.id.ice);
         if(ck.isChecked())
-        {name+="\nWipped cream added";q+=5;}
+        {name+="\nWipped cream added";t+=2;}
+
+        if(cho.isChecked())
+        {name+="\nChocolate added";t+=3;}
+
+        if(ice.isChecked())
+        {name+="\nIce cream added";t+=5;}
+
         name+="\nquantity of coffee ordered:"+quant+"\nThank you have a nice day";
         TextView text1=(TextView)findViewById(R.id.price);
 
-        text1.setText(NumberFormat.getCurrencyInstance().format(q)+name);
+        text1.setText(NumberFormat.getCurrencyInstance().format(quant*(5+t))+name);
 
     }
     @Override

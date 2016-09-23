@@ -11,10 +11,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity"
     android:orientation="vertical">
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:inputType="textMultiLine" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="quantity"
+        android:text="Toppings"
         android:textAllCaps="true"
         android:textColor="@android:color/black"
         android:textSize="24sp"
@@ -26,6 +32,20 @@
         android:text="Whipped cream"
         android:textSize="24dp"
         android:id="@+id/chk"/>
+    <android.support.v7.widget.AppCompatCheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="Chocolate"
+        android:textSize="24dp"
+        android:id="@+id/cho"/>
+    <android.support.v7.widget.AppCompatCheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="Ice cream"
+        android:textSize="24dp"
+        android:id="@+id/ice"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
